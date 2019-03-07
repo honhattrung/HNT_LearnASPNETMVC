@@ -21,5 +21,8 @@ namespace WebApplication2.Controllers {
 
             return View();
         }
+        public ActionResult Template() {
+            return View();
+        }
     }
 }
