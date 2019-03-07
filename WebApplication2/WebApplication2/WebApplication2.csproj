@@ -122,21 +122,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\trung.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Controllers\Scripts\bootstrap.js" />
+    <Content Include="Controllers\Scripts\bootstrap.min.js" />
+    <None Include="Controllers\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Controllers\Scripts\jquery-1.10.2.js" />
+    <Content Include="Controllers\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Controllers\Scripts\modernizr-2.6.2.js" />
+    <Content Include="Controllers\Scripts\respond.js" />
+    <Content Include="Controllers\Scripts\respond.min.js" />
+    <Content Include="Controllers\Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -151,7 +152,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Controllers\Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
