@@ -23,5 +23,17 @@ namespace UnitTestProject1 {
             var result = controller.ShowAuthor();
             Assert.AreEqual("Hồ Nhật Trung", result);
         }
+        [TestMethod]
+        public void TestFactorial() {
+            var controller= new StudentController();
+            var result = controller.Factorial(2);
+            Assert.AreEqual(2, result);
+        }
+        [TestMethod]
+        public void TestSum() {
+            var controller = new StudentController();
+            var result = controller.Sum(1, 9);
+            Assert.AreEqual(10, result);
+        }
     }
 }
