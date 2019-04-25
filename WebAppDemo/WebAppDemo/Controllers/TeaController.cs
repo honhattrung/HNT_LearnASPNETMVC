@@ -23,10 +23,7 @@ namespace WebAppDemo.Controllers
         // GET: /Tea/Details/5
         public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             BubleTea bubletea = db.BubleTeas.Find(id);
             if (bubletea == null)
             {
@@ -46,25 +43,22 @@ namespace WebAppDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="id,Name,Price,Topping")] BubleTea bubletea)
+        public ActionResult Create( BubleTea model)
         {
             if (ModelState.IsValid)
             {
-                db.BubleTeas.Add(bubletea);
+                db.BubleTeas.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(bubletea);
+            return View(model);
         }
 
         // GET: /Tea/Edit/5
         public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             BubleTea bubletea = db.BubleTeas.Find(id);
             if (bubletea == null)
             {
@@ -92,10 +86,7 @@ namespace WebAppDemo.Controllers
         // GET: /Tea/Delete/5
         public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            
             BubleTea bubletea = db.BubleTeas.Find(id);
             if (bubletea == null)
             {

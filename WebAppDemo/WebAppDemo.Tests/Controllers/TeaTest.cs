@@ -64,5 +64,26 @@ namespace WebAppDemo.Tests.Controllers {
             Assert.AreEqual(item.id, model.id);
 
         }
-    }
+     [TestMethod]
+        public void TestCreateP() {
+         var db=new HenzaiEntities();
+         var model = new BubleTea
+         
+         {
+             Name="Tra sua VL",
+             Price= 25000,
+             Topping="tran chau trang",
+         };
+         var controller = new TeaController();
+         var result= controller.Create(model);
+         var redirect = result as RedirectToRouteResult;
+         Assert.IsNotNull(redirect);
+         Assert.AreEqual("Index", redirect.RouteValues["action"]);
+         var item = db.BubleTeas.Find(model.id);
+         Assert.IsNotNull(item);
+         Assert.AreEqual(model.Name, item.Name);
+         Assert.AreEqual(model.Price, item.Price);
+         Assert.AreEqual(model.Topping, item.Topping);
+        }
+        }
 }
