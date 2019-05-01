@@ -72,15 +72,15 @@ namespace WebAppDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="id,Name,Price,Topping")] BubleTea bubletea)
+        public ActionResult Edit( BubleTea model)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(bubletea).State = EntityState.Modified;
+                db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(bubletea);
+            return View(model);
         }
 
         // GET: /Tea/Delete/5

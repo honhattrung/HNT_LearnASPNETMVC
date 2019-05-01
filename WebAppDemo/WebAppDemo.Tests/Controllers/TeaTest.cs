@@ -70,8 +70,8 @@ namespace WebAppDemo.Tests.Controllers {
          var model = new BubleTea
          
          {
-             Name="Tra sua VL",
-             Price= 25000,
+             Name="Tra sua Matcha",
+             Price= 28000,
              Topping="tran chau trang",
          };
          var controller = new TeaController();
@@ -85,5 +85,23 @@ namespace WebAppDemo.Tests.Controllers {
          Assert.AreEqual(model.Price, item.Price);
          Assert.AreEqual(model.Topping, item.Topping);
         }
+        [TestMethod]
+        public void TestEditP() {
+            var db = new HenzaiEntities();
+            var controller = new TeaController();
+            var model = new BubleTea {
+                Name = "Tra sua Matcha",
+                Price = 28000,
+                Topping = "tran chau trang",
+            };
+            var result = controller.Edit(model);
+            Assert.IsInstanceOfType(result, typeof(HttpNotFoundResult));
+            var item = db.BubleTeas.First();
+            var result1 = controller.Edit(item.id) as ViewResult;
+            Assert.IsNotNull(result1);
+
+
+
         }
+    }
 }
